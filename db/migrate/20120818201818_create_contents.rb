@@ -8,7 +8,7 @@ class CreateContents < ActiveRecord::Migration
     end
 
     add_index :contents, :book_id
-    execute 'create fulltext index `fulltext_index_on_content` on contents(content)'
+    execute 'create fulltext index `fulltext_index_on_content` on contents(`content`) COMMENT \'parser "TokenMecab"\''
   end
 
   def down
