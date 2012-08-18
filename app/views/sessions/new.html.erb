@@ -1,0 +1,15 @@
+<%= form_tag :session do %>
+<ul>
+  <li>
+    <%= label_tag :username %>
+    <%= text_field_tag :username, params[:username] %>
+  </li>
+  <li>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </li>
+  <li>
+    <%= submit_tag 'login' %>
+  </li>
+</ul>
+<% end %>
