@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.string :title, null: false
       t.string :author, null: false
-      t.string :location, null: false
+      t.string :epub, null: false
       t.integer :user_id, null: false
 
       t.timestamps
@@ -12,7 +12,7 @@ class CreateBooks < ActiveRecord::Migration
     add_index :books, :user_id
     add_index :books, :title
     add_index :books, :author
-    add_index :books, :location, unique: true
+    add_index :books, :epub, unique: true
     add_foreign_key :books, :users
   end
 end
