@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username
+  attr_accessible :username, :password
   attr_accessor :password
 
   has_many :books, dependent: :destroy
