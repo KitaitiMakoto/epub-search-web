@@ -1,4 +1,6 @@
 EpubSearch::Application.routes.draw do
+  resources :contents
+
   resources :books
 
   resources :users
