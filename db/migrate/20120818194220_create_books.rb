@@ -13,5 +13,6 @@ class CreateBooks < ActiveRecord::Migration
     add_index :books, :title
     add_index :books, :author
     add_index :books, :location, unique: true
+    add_foreign_key :books, :users
   end
 end
