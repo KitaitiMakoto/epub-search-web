@@ -1,6 +1,6 @@
 class CreateContents < ActiveRecord::Migration
   def up
-    create_table :contents, options: 'ENGINE=mroonga' do |t|
+    create_table :contents, options: 'ENGINE=mroonga CHARACTER SET utf8 COLLATE utf8_general_ci' do |t|
       t.text :content
       t.integer :book_id
 
