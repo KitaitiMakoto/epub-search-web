@@ -4,7 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Author</th>
-    <th>EPUB</th>
+    <th>Filename</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,9 +14,8 @@
   <tr>
     <td><%= book.title %></td>
     <td><%= book.author %></td>
-    <td><%= book.epub %></td>
+    <td><%= book.filename %></td>
     <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
     <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

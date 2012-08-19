@@ -35,12 +35,16 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    file = params[:book].delete(:file)
+    book_info = EPUB::Parser.parse(file.tempfile).package.metadata
     @book = Book.new(params[:book])
-    @book.user_id = current_user.id
-    @book.epub = params[:epub]
+    @book.title = book_info.title
+    @book.author = book_info.creators.join
+    @book.filename = File.basename(file.original_filename)
+    @book.location = file
 
     respond_to do |format|
-      if @book.save
+      if current_user.books << @book
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else
