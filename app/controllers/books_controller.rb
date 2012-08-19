@@ -46,6 +46,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if current_user.books << @book
+        Resque.enqueue EpubRegistrar, @book.id
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else
