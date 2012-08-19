@@ -2,25 +2,16 @@
 
 <table>
   <tr>
-    <th>Content</th>
     <th>Book</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Content</th>
   </tr>
 
 <% @contents.each do |content| %>
   <tr>
     <td><%= link_to content.book.title, book_path(content.book, format: 'epub') %></td>
     <td><%= content.content %></td>
-    <td><%= content.book_id %></td>
-    <td><%= link_to 'Show', content %></td>
-    <td><%= link_to 'Edit', edit_content_path(content) %></td>
-    <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Content', new_content_path %>
