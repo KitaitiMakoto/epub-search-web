@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
