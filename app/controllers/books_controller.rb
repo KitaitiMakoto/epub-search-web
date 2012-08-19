@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find_by_id_and_user_id!(params[:id], current_user.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,7 +57,8 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    @book = Book.find(params[:id])
+    # TODO: add key for [id, user_id] to books table
+    @book = Book.find_by_id_and_user_id!(params[:id], current_user.id)
     @book.destroy
 
     respond_to do |format|
