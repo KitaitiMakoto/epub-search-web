@@ -1,5 +1,9 @@
 <h1>Listing contents</h1>
 
+<%= form_tag(:contents, :method => :get) do %>
+<p><%= text_field_tag :q, @q %><%= submit_tag 'search' %></p>
+<% end %>
+
 <table>
   <tr>
     <th>Book</th>
