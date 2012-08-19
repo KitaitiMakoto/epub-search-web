@@ -11,6 +11,7 @@
 
 <% @contents.each do |content| %>
   <tr>
+    <td><%= link_to content.book.title, book_path(content.book, format: 'epub') %></td>
     <td><%= content.content %></td>
     <td><%= content.book_id %></td>
     <td><%= link_to 'Show', content %></td>

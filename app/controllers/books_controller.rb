@@ -18,6 +18,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @book }
+      format.epub { send_file @book.location.url, filename: @book.filename, dispositioin: 'attachment', type: 'application/epub+zip' }
     end
   end
 
