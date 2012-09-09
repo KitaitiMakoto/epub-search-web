@@ -5,3 +5,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 EpubSearch::Application.load_tasks
+
+namespace :db do
+  desc 'Drop and crate database'
+  task :recreate => [:drop, :create]
+end
