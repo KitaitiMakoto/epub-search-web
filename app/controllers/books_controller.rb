@@ -37,6 +37,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     file = params[:book].delete(:file)
+    # TODO: if file is nil?
     book_info = EPUB::Parser.parse(file.tempfile).package.metadata
     @book = Book.new(params[:book])
     @book.title = book_info.title

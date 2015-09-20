@@ -13,7 +13,13 @@
 <% @contents.each do |content| %>
   <tr>
     <td><%= link_to content.book.title, book_path(content.book, format: 'epub') %></td>
-    <td><%= content.content %></td>
+    <td>
+      <ul>
+        <%- content.content.each_line do |line| -%>
+        <%- if /#{@q}/o =~ line -%><li><%= highlight line.chomp, @q %></li><%- end -%>
+        <%- end -%>
+      </ul>
+    </td>
   </tr>
 <% end %>
 </table>

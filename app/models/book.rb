@@ -5,5 +5,5 @@ class Book < ActiveRecord::Base
   belongs_to :user
   has_many :contents, dependent: :destroy
 
-  validates :author, :filename, :location, :title, :user_id, presence: true
+  # validates :author, :filename, :location, :title, :user_id, presence: true
 end

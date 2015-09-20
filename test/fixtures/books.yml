@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  author: MyString
-  file: MyString
+  title: book1
+  author: author1
+  filename: path/to/book1
+  location: location/of/book1
 
 two:
-  title: MyString
-  author: MyString
-  file: MyString
+  title: book2
+  author: author2
+  filename: path/to/book2

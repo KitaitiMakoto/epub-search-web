@@ -1,6 +1,8 @@
 = EPUB Search
 Personal search engine for EPUB files.
 
+This projec was retired. Consider {EPUB Sercher}[https://github.com/ranguba/epub-searcher] for the same purpose.
+
 == Requirements
 - MySQL
 - mroonga
